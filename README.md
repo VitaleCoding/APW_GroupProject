@@ -3,6 +3,6 @@ This collection of folders is currently made to be a skeleton to house the code.
 
 1. Quiz data (questions and answers)
 2. Website data (pulling the quiz data into the website formatting)
-3. Leaderboard data (save results of each quiz attempt including what questions were given in that attempt. Could also pull this data to be displayed on the website).
+3. Leaderboard data (save results of each quiz attempt including what questions were given in that attempt. Could also pull this data to be displayed on the website)
 
 My goal for all of us is to figure out the organization of files either before or during our next meeting together, and then start with the quiz questions and answers. I can handle the question data if need be, but the goal is to have anywhere from 50-55 questions in the pool to be pulled into a 15-20 question quiz

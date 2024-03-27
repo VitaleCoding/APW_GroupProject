@@ -6,3 +6,6 @@ This collection of folders is currently made to be a skeleton to house the code.
 3. Leaderboard data (save results of each quiz attempt including what questions were given in that attempt. Could also pull this data to be displayed on the website)
 
 My goal for all of us is to figure out the organization of files either before or during our next meeting together, and then start with the quiz questions and answers. I can handle the question data if need be, but the goal is to have anywhere from 50-55 questions in the pool to be pulled into a 15-20 question quiz
+
+3/27/2024:
+United States questions & answers are finished and have been assigned difficulty values ranging from 1 to 5. A template UnitedStatesQuiz.js file has been made to display a rudementary example of a randomized quiz. WIP but i figured i'd throw it in there as a visual aid while I work on the finer details of the quiz randomizer

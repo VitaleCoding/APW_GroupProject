@@ -1,5 +1,6 @@
 const questions = [
     {
+        //1
         question: "In which year did World War I begin?",
         answers: [
             { text: "1923", correct: false},
@@ -9,6 +10,7 @@ const questions = [
         ]
     },
     {
+        //2
         question: "In which country was the Battle of Hastings in 1066 fought?",
         answers: [
             { text: "France", correct: false},
@@ -18,6 +20,7 @@ const questions = [
         ]
     },
     {
+        //3
         question: "By the king of which country was the Manga Carta published?",
         answers: [
             { text: "France", correct: false},
@@ -27,6 +30,7 @@ const questions = [
         ]
     },
     {
+        //4
         question: "The first successful movable-type printing press was developed by this man.",
         answers: [
             { text: "Johannes Gutenberg", correct: true},
@@ -36,6 +40,7 @@ const questions = [
         ]
     },
     {
+        //5
         question: "The disease that ravaged and killed a third of Europe's population in the 14th century is known as: ?",
         answers: [
             { text: "The White Death", correct: false},
@@ -45,6 +50,7 @@ const questions = [
         ]
     },
     {
+        //6
         question: "Between which countries was the Hundred Years War fought?",
         answers: [
             { text: "Italy and Carthage", correct: false},
@@ -54,6 +60,7 @@ const questions = [
         ]
     },
     {
+        //7
         question: "By the king of which country was the Manga Carta published?",
         answers: [
             { text: "France", correct: false},
@@ -63,6 +70,7 @@ const questions = [
         ]
     },
     {
+        //8
         question: "Which Roman Emperor built a massive wall across Northen Britain in 122 A.D.?",
         answers: [
             { text: "Marcus Aurelius", correct: false},
@@ -72,6 +80,7 @@ const questions = [
         ]
     },
     {
+        //9
         question: "In which year did Albert Einstein get the Nobel Prize?",
         answers: [
             { text: "1914", correct: false},
@@ -81,6 +90,7 @@ const questions = [
         ]
     },
     {
+        //10
         question: "This man wrote a document known as the 95 Theses?",
         answers: [
             { text: "Martin Luther", correct: true},
@@ -90,6 +100,7 @@ const questions = [
         ]
     },
     {
+        //11
         question: "In 1594, William Shakespeare joined this company of this London thearte.",
         answers: [
             { text: "Broadway", correct: false},
@@ -99,6 +110,7 @@ const questions = [
         ]
     },
     {
+        //12
         question: "What famous 5th century A.D. conqueror was known as 'The Scourge of God'?",
         answers: [
             { text: "Hannibal", correct: false},
@@ -108,6 +120,7 @@ const questions = [
         ]
     },
     {
+        //13
         question: "Which counrty signed a nonaggression pact with the Soviet Union in 1939?",
         answers: [
             { text: "The United States", correct: false},
@@ -117,6 +130,7 @@ const questions = [
         ]
     },
     {
+        //14
         question: "Marx and Engels predicted that the workers would: ",
         answers: [
             { text: "Become middle class", correct: false},
@@ -126,6 +140,7 @@ const questions = [
         ]
     },
     {
+        //15
         question: "What event in Sarajevo ignited the Great War?",
         answers: [
             { text: "Russia's mobilization of troops along the Austrian border", correct: false},
@@ -135,6 +150,7 @@ const questions = [
         ]
     },
     {
+        //16
         question: "The German blitzkrieg was a military strategy the depended on what advantage?",
         answers: [
             { text: "Surpise and overwhelming force using fast tanks, jeeps, and planes", correct: true},
@@ -144,6 +160,7 @@ const questions = [
         ]
     }, 
     {
+        //17
         question: "What is a totaltitarian state?",
         answers: [
             { text: "A state in which the people have a direct say in their government", correct: false},
@@ -153,6 +170,7 @@ const questions = [
         ]
     },
     {
+        //18
         question: "Why did some people call for reform during the Industrial Revolution?",
         answers: [
             { text: "Reformers seemed popular", correct: false},
@@ -162,6 +180,7 @@ const questions = [
         ]
     },
     {
+        //19
         question: "Which nation was unified by Otto von Bismarck and later ruled by Kaiser Wilhelm II?",
         answers: [
             { text: "Germany", correct: true},
@@ -171,6 +190,7 @@ const questions = [
         ]
     },
     {
+        //20
         question: "What was the Industrial Revolution?",
         answers: [
             { text: "Increased populations of urban areas during the 1800s", correct: false},
@@ -180,6 +200,7 @@ const questions = [
         ]
     },
     {
+        //21
         question: "Who were the Bolsheviks?",
         answers: [
             { text: "Radical Russian Marxist revolutionaries", correct: false},
@@ -189,6 +210,7 @@ const questions = [
         ]
     },
     {
+        //22
         question: "He was the leader of the Bolsheviks.",
         answers: [
             { text: "Mao", correct: false},
@@ -198,6 +220,7 @@ const questions = [
         ]
     },
     {
+        //23
         question: "What was the policy of appeasement?",
         answers: [
             { text: "The British and French decision to give into agrresion to keep the peace", correct: true},
@@ -207,6 +230,7 @@ const questions = [
         ]
     },
     {
+        //24
         question: "The Glorious Revolution of 1688 installed William of Orange on the throne of England.  Where did William of Orange come from?",
         answers: [
             { text: "Germany", correct: false},
@@ -216,6 +240,7 @@ const questions = [
         ]
     },
     {
+        //25
         question: "Who were expelled from England in 1290, not being allowed to return until 1657?",
         answers: [
             { text: "Buddhists", correct: false},
@@ -225,6 +250,7 @@ const questions = [
         ]
     },
     {
+        //26
         question: "What country was invaded by Nazi Germany that officially started World War II?",
         answers: [
             { text: "Belgium", correct: false},
@@ -234,6 +260,7 @@ const questions = [
         ]
     },
     {
+        //27
         question: "What year was the Berlin Wall destroyed?",
         answers: [
             { text: "1961", correct: false},
@@ -243,6 +270,7 @@ const questions = [
         ]
     },
     {
+        //28
         question: "What city of Italy is credited with the orinination of the Renaissance Period?",
         answers: [
             { text: "Naples", correct: false},
@@ -252,6 +280,7 @@ const questions = [
         ]
     },
     {
+        //29
         question: "In what year did the 100 Years' War begin?",
         answers: [
             { text: "1453", correct: false},
@@ -261,6 +290,7 @@ const questions = [
         ]
     },
     {
+        //30
         question: "The Battle of Waterloo, considered to be Napolean's downfall, happened here",
         answers: [
             { text: "Belguim", correct: true},
@@ -270,6 +300,7 @@ const questions = [
         ]
     },
     {
+        //31
         question: "Which European Nation did the Black Plague reach first?",
         answers: [
             { text: "Poland", correct: false},
@@ -279,6 +310,7 @@ const questions = [
         ]
     },
     {
+        //32
         question: "Isabella I of Castille was the queen of: ",
         answers: [
             { text: "Russia", correct: false},
@@ -288,6 +320,7 @@ const questions = [
         ]
     },
     {
+        //33
         question: "Which of these countries did not sign the Warsaw Pact?",
         answers: [
             { text: "Yugoslavia", correct: true},
@@ -297,6 +330,7 @@ const questions = [
         ]
     },
     {
+        //34
         question: "Which of these countries has a national anthem with no lyrics?",
         answers: [
             { text: "France", correct: false},
@@ -306,6 +340,7 @@ const questions = [
         ]
     },
     {
+        //35
         question: "When did Alexander the Great die?",
         answers: [
             { text: "323 B.C.", correct: true},
@@ -315,6 +350,7 @@ const questions = [
         ]
     },
     {
+        //36
         question: "The spinning jenny was one of the earliest innovations in the Industiral Revoultion.  What was a spinning jenny?",
         answers: [
             { text: "A device for making cloth", correct: true},
@@ -324,6 +360,7 @@ const questions = [
         ]
     },
     {
+        //37
         question: "How many wives did King Henry have?", 
         answers: [
             { text: "1", correct: false},
@@ -333,6 +370,7 @@ const questions = [
         ]
     },
     {
+        //38
         question: "What was the Byzantine Empire?",
         answers: [
             { text: "An alliance ruled by the Pope", correct: false},
@@ -342,6 +380,7 @@ const questions = [
         ]
     },
     {
+        //39
         question: "When was the last time Moscow was ever captured by a foriegn power?",
         answers: [
             { text: "By Ogedei Khan in 1238", correct: false},
@@ -351,6 +390,7 @@ const questions = [
         ]
     },
     {
+        //40
         question: "Who theorized that, as food levels rise, population levels grow to meet them - thereby ensuring most people will always be poor?",
         answers: [
             { text: "G.W.F. Hegel", correct: false},
@@ -360,6 +400,7 @@ const questions = [
         ]
     },
     {
+        //41
         question: "Where did Karl Max spend most of his adult life?",
         answers: [
             { text: "Berlin", correct: false},
@@ -369,6 +410,7 @@ const questions = [
         ]
     },
     {
+        //42
         question: "Where was the Metric System developed?",
         answers: [
             { text: "Ancient Greece", correct: false},
@@ -378,6 +420,7 @@ const questions = [
         ]
     },
     {
+        //43
         question: "Who was Anton Chekov?",
         answers: [
             { text: "Chess player", correct: false},
@@ -387,6 +430,7 @@ const questions = [
         ]
     },
     {
+        //44
         question: "What style of architecture is exemplified by the Norte Dame cathedral in Paris?",
         answers: [
             { text: "Art Deco", correct: false},
@@ -396,6 +440,7 @@ const questions = [
         ]
     },
     {
+        //45
         question: "How long did Hitler envision his 'Third Reich' lasting?",
         answers: [
             { text: "10 years", correct: false},
@@ -405,6 +450,7 @@ const questions = [
         ]
     },
     {
+        //46
         question: "What year did World War II end?",
         answers: [
             { text: "1923", correct: false},
@@ -414,6 +460,7 @@ const questions = [
         ]
     },
     {
+        //47
         question: "What was the original worth of a British pound?",
         answers: [
             { text: "Pound of copper", correct: false},
@@ -423,6 +470,7 @@ const questions = [
         ]
     },
     {
+        //48
         question: "What royal house did Queen Elizabeth I come from?",
         answers: [
             { text: "Plantagenets", correct: false},
@@ -432,6 +480,7 @@ const questions = [
         ]
     }, 
     {
+        //49
         question: "How did Napoleon die?",
         answers: [
             { text: "Gulliotine, Paris, 1815", correct: false},
@@ -441,6 +490,7 @@ const questions = [
         ]
     },
     {
+        //50
         question: "What did the Battle of Trafalgar take place?",
         answers: [
             { text: "France", correct: false},

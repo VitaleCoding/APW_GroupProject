@@ -1,56 +1,122 @@
-const unitedStatesQuizQuestions = require('./UnitedStatesQuestions');
-const unitedStatesQuizAnswers = require('./UnitedStatesAnswers');
+const readline = require('readline');
 
-// Function to get questions of a specific difficulty
-function getQuestionsByDifficulty(questions, difficulty) {
-    return questions.filter(question => question.difficulty === difficulty);
-}
+// Fisher-Yates (Knuth) Shuffle algorithm
+function shuffle(array) {
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
-// Function to shuffle an array using Fisher-Yates algorithm
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
+    // While there remain elements to shuffle
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // Swap it with the current element
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
     }
+
     return array;
 }
 
-// Function to create a quiz with a mix of difficulties
-function createQuiz(questions, numberOfQuestions) {
-    // Shuffle the questions array to ensure randomness
-    const shuffledQuestions = shuffleArray(questions);
+// Importing the quiz data
+const unitedStatesQuizQuestions = require('./UnitedStatesQuestions');
 
-    const quiz = [];
-    const difficulties = [1, 2, 3, 4, 5]; // Assuming difficulties range from 1 to 5
-    const questionsPerDifficulty = Math.floor(numberOfQuestions / difficulties.length);
+// Function to start the quiz
+function startQuiz() {
+    console.log('Welcome to the United States Quiz!\n');
 
-    difficulties.forEach(difficulty => {
-        const questionsOfDifficulty = getQuestionsByDifficulty(shuffledQuestions, difficulty);
-        const selectedQuestions = questionsOfDifficulty.slice(0, questionsPerDifficulty);
-        quiz.push(...selectedQuestions);
+    // Initialize score
+    let score = 0;
+
+    // Object to store questions by difficulty level
+    const questionsByDifficulty = {
+        1: [],
+        2: [],
+        3: [],
+        4: [],
+        5: []
+    };
+
+    // Group questions by difficulty level
+    unitedStatesQuizQuestions.forEach(question => {
+        questionsByDifficulty[question.difficulty].push(question);
     });
 
-    // Shuffle the quiz array again to mix questions from different difficulties
-    return shuffleArray(quiz);
-}
+    // Ensure we have enough questions for each difficulty level
+    const questionsPerDifficulty = {
+        1: 4,
+        2: 4,
+        3: 4,
+        4: 4,
+        5: 4
+    };
 
-// Function to display the quiz
-function displayQuiz(quiz) {
-    quiz.forEach((question, index) => {
-        console.log(`Question ${index + 1}: ${question.question}`);
-        console.log("Options:");
-        question.options.forEach((option, idx) => {
-            console.log(`${idx + 1}. ${option}`);
-        });
-        console.log();
+    // Select questions from each difficulty level
+    const selectedQuestions = [];
+    Object.keys(questionsByDifficulty).forEach(difficulty => {
+        const numQuestions = questionsPerDifficulty[difficulty];
+        const questions = shuffle(questionsByDifficulty[difficulty]).slice(0, numQuestions);
+        selectedQuestions.push(...questions);
     });
+
+    // Shuffle all selected questions
+    const shuffledQuestions = shuffle(selectedQuestions);
+
+    // Create readline interface
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
+
+    // Iterate through each question
+    let questionIndex = 0;
+    function askQuestion() {
+        if (questionIndex < shuffledQuestions.length) {
+            const question = shuffledQuestions[questionIndex];
+            console.log(`Question ${questionIndex + 1}: ${question.question}`);
+            console.log('Options:');
+            const shuffledOptions = shuffle(question.options);
+            shuffledOptions.forEach((option, optionIndex) => {
+                console.log(`${optionIndex + 1}. ${option.text}`);
+            });
+
+            // Prompt user for input
+            rl.question(`Enter your answer (1-${shuffledOptions.length}): `, userInput => {
+                // Validate input
+                const userChoice = parseInt(userInput);
+                if (isNaN(userChoice) || userChoice < 1 || userChoice > shuffledOptions.length) {
+                    console.log('Invalid input. Please enter a number between 1 and ' + shuffledOptions.length + '.\n');
+                    askQuestion();
+                    return;
+                }
+
+                // Check if the selected option is correct
+                const selectedOption = shuffledOptions[userChoice - 1];
+                if (selectedOption.correct) {
+                    console.log('Correct!\n');
+                    score++;
+                } else {
+                    console.log('Incorrect. The correct answer is: ' + shuffledOptions.find(opt => opt.correct).text + '\n');
+                }
+
+                // Move to the next question
+                questionIndex++;
+                askQuestion();
+            });
+        } else {
+            // Close the readline interface
+            rl.close();
+
+            // Display final score
+            console.log(`Quiz completed! Your final score is: ${score}/${shuffledQuestions.length}`);
+        }
+    }
+
+    // Start asking questions
+    askQuestion();
 }
 
-// Number of questions in the quiz
-const numberOfQuestions = 10; // Adjust as needed
-
-// Generate the quiz
-const quiz = createQuiz(unitedStatesQuizQuestions, numberOfQuestions);
-
-// Display the quiz
-displayQuiz(quiz);
+// Start the quiz
+startQuiz();

@@ -77,7 +77,7 @@ function startQuiz() {
             const question = shuffledQuestions[questionIndex];
             console.log(`Question ${questionIndex + 1}: ${question.question}`);
             console.log('Options:');
-            const shuffledOptions = shuffle(question.options);
+            const shuffledOptions = shuffle(question.answers);
             shuffledOptions.forEach((option, optionIndex) => {
                 console.log(`${optionIndex + 1}. ${option.text}`);
             });

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Template</title>
+</head>
+<body>
+    <h1 id="quiz-title">Loading Quiz...</h1>
+    <div id="quiz-questions"></div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const topic = urlParams.get('topic');
+
+        // Load the appropriate quiz script based on the selected topic
+        let quizScriptSrc;
+
+        if (topic === 'UnitedStates') {
+            quizScriptSrc = 'UnitedStatesQuiz.js';
+        } else if (topic === 'EuropeanHistory') {
+            quizScriptSrc = 'EuropeanHistoryQuiz.js';
+        } else if (topic === 'ChineseHistory') {
+            quizScriptSrc = 'ChinaQuiz.js';
+        } else {
+            // Handle invalid topic
+            document.getElementById('quiz-title').innerText = 'Invalid Topic';
+            return;
+        }
+
+        // Load quiz script
+        const quizScript = document.createElement('script');
+        quizScript.src = quizScriptSrc;
+        document.head.appendChild(quizScript);
+
+        // Function to start the quiz with the loaded quiz script
+        function startQuiz() {
+            console.log(`Welcome to the ${quizData.topic} Quiz!\n`);
+
+            // Your quiz logic here, utilizing the loaded quiz script
+        }
+
+        // Call startQuiz() when the quiz script is loaded
+        quizScript.onload = function() {
+            startQuiz();
+        };
+    </script>
+</body>
+</html>

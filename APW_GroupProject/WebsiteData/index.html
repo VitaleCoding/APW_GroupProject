@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Selection</title>
+</head>
+<body>
+    <h1>Select a Quiz:</h1>
+    <button onclick="startQuiz('UnitedStates')">United States History</button>
+    <button onclick="startQuiz('European')">European History</button>
+    <button onclick="startQuiz('Chinese')">Chinese History</button>
+
+    <script>
+        function startQuiz(topic) {
+            window.location.href = `quiztemplate.html?topic=${topic}`;
+        }
+    </script>
+</body>
+</html>

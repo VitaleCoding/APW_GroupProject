@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            text-align: center;
+        }
+ 
+        p {
+            color: green;
+        }
+    </style>
+</head>
+ 
+<body>
+    <h1>Create your Profile!</h1>
+    <h3>Enter Your Name</h3>
+    <input id="name" type="text">
+
+    <p id="demo"></p>
+    <script>
+        function EnterName() {
+            let user = document.getElementById("name").value;
+        }
+    </script>
+    <h3>Enter Your Password</h3>
+    <input id="password" type="text">
+    <h1></h1>
+    <button type="button" onclick="EnterName()">Submit</button>
+    <p id="demo"></p>
+    <script>
+        function EnterName() {
+            let user = document.getElementById("name").value; 
+        }
+    </script>
+</body>
+ 
+</html>

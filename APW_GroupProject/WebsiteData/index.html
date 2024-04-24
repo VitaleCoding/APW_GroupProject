@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -13,7 +12,22 @@
 
     <script>
         function startQuiz(topic) {
-            window.location.href = `quiztemplate.html?topic=${topic}`;
+            let quizUrl;
+            switch (topic) {
+                case 'UnitedStates':
+                    quizUrl = 'unitedstates.html';
+                    break;
+                case 'European':
+                    quizUrl = 'europe.html';
+                    break;
+                case 'Chinese':
+                    quizUrl = 'china.html';
+                    break;
+                default:
+                    console.error('Invalid topic selected');
+                    return;
+            }
+            window.location.href = quizUrl;
         }
     </script>
 </body>

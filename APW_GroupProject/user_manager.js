@@ -105,6 +105,13 @@ user_manager.register_user = async function(username, password) {
     return user;
 }
 
+// Returns leaderboard data in the format of:
+// Topic:
+//      Tests Taken / Average Score:
+//          {Username, Value}
+// For example, leaderboard_data.us.taken gets the list of users and the total US tests they've taken
+// First username would be retrieved with leaderboard_data.us.taken[0].user
+// Note: This is returned **unsorted** as of this moment
 user_manager.get_leaderboard_data = async function() {
     let leaderboard_data = {
         us: {

@@ -1,40 +1,54 @@
 <!DOCTYPE html>
-<html>
- 
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
         body {
             text-align: center;
         }
- 
+
         p {
             color: green;
         }
+
+        #backButton {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
     </style>
 </head>
- 
+
 <body>
+    <button id="backButton" onclick="goToMainMenu()">Back to Main Menu</button>
     <h1>Create your Profile!</h1>
     <h3>Enter Your Name</h3>
     <input id="name" type="text">
-
-    <p id="demo"></p>
-    <script>
-        function EnterName() {
-            let user = document.getElementById("name").value;
-        }
-    </script>
     <h3>Enter Your Password</h3>
-    <input id="password" type="text">
-    <h1></h1>
-    <button type="button" onclick="EnterName()">Submit</button>
-    <p id="demo"></p>
+    <input id="password" type="password">
+    <p id="error" style="color: red;"></p>
+    <button type="button" onclick="validateForm()">Submit</button>
+
     <script>
-        function EnterName() {
-            let user = document.getElementById("name").value; 
+        function validateForm() {
+            var username = document.getElementById("name").value;
+            var password = document.getElementById("password").value;
+
+            if (username === "" || password === "") {
+                document.getElementById("error").innerText = "Please fill out both username and password.";
+            } else {
+                // Assuming both fields are filled, redirect to leaderboard.html
+                window.location.href = "leaderboard.html";
+            }
+        }
+
+        function goToMainMenu() {
+            window.location.href = "menu.html";
         }
     </script>
 </body>
- 
+
 </html>

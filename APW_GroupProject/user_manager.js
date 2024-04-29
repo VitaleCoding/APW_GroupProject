@@ -85,6 +85,7 @@ user_manager.create_user = async function(username, password) {
 user_manager.register_user = async function(username, password) {
     // Attempt to find user
     let user = null;
+    
     try {
         user = await user_manager.authenticate_user(username, password);
     }

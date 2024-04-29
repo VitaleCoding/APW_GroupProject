@@ -1,10 +1,32 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Selection</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        #backButton {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
 </head>
+
 <body>
+    <button id="backButton" onclick="goToMainMenu()">Back to Main Menu</button>
     <h1>Select a Quiz:</h1>
     <button onclick="startQuiz('UnitedStates')">United States History</button>
     <button onclick="startQuiz('European')">European History</button>
@@ -29,6 +51,11 @@
             }
             window.location.href = quizUrl;
         }
+
+        function goToMainMenu() {
+            window.location.href = "menu.html";
+        }
     </script>
 </body>
+
 </html>

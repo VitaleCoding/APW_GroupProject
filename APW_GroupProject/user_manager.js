@@ -109,45 +109,29 @@ user_manager.register_user = async function(username, password) {
 // Topic:
 //      Tests Taken / Average Score:
 //          {Username, Value}
-// For example, leaderboard_data.us.taken gets the list of users and the total US tests they've taken
+// For example, leaderboard_data.us.taken gets a list of users and the total US tests they've taken
 // First username would be retrieved with leaderboard_data.us.taken[0].user
 // Note: This is returned **unsorted** as of this moment
 user_manager.get_leaderboard_data = async function() {
     let leaderboard_data = {
         us: {
-            taken: [
-
-            ],
-            average_score: [
-
-            ]
+            taken: [],
+            average_score: []
         },
 
         europe: {
-            taken: [
-
-            ],
-            average_score: [
-                
-            ]
+            taken: [],
+            average_score: []
         },
 
         china: {
-            taken: [
-
-            ],
-            average_score: [
-                
-            ]
+            taken: [],
+            average_score: []
         },
 
         all: {
-            taken: [
-
-            ],
-            average_score: [
-                
-            ]
+            taken: [],
+            average_score: []
         }
     }
 
@@ -167,7 +151,7 @@ user_manager.get_leaderboard_data = async function() {
                     user_taken.china += 1;
                     user_total_score.china += quiz.score;
                     break;
-                case "EU":
+                case "Europe":
                     user_taken.europe += 1;
                     user_total_score.europe += quiz.score;
                     break;
@@ -186,6 +170,17 @@ user_manager.get_leaderboard_data = async function() {
         leaderboard_data.all.taken.push({user: user_doc.username, value: user_taken.us + user_taken.china + user_taken.europe});
         leaderboard_data.all.average_score.push({user: user_doc.username, value: (user_total_score.us + user_total_score.europe + user_total_score.china) / (user_taken.us + user_taken.europe + user_taken.china)});
     });
+
+    let value_sort = function(a, b) {return b.value - a.value;};
+
+    leaderboard_data.us.taken.sort(value_sort);
+    leaderboard_data.us.average_score.sort(value_sort);
+    leaderboard_data.europe.average_score.sort(value_sort);
+    leaderboard_data.europe.taken.sort(value_sort);
+    leaderboard_data.china.taken.sort(value_sort);
+    leaderboard_data.china.average_score.sort(value_sort);
+    leaderboard_data.all.taken.sort(value_sort);
+    leaderboard_data.all.average_score.sort(value_sort);
 
     return leaderboard_data;
 }

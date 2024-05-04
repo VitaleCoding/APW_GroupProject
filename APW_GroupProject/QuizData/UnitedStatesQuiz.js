@@ -1,3 +1,4 @@
+//Samuel Vitale
 const readline = require('readline');
 
 // Fisher-Yates (Knuth) Shuffle algorithm

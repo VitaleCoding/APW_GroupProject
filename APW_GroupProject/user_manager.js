@@ -1,3 +1,4 @@
+//Spencer Hoban
 const db = require("./database_manager.js");
 let user_collection;
 
